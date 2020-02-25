@@ -11,5 +11,5 @@ class User < ActiveRecord::Base
   has_many :appointments, dependent: :destroy
   has_many :attendance, dependent: :destroy
   has_many :groups_attending, through: :attendance, source: :support_group
-  has_many :treated_by, through: :appointment, source: :counselor
+  has_many :treated_by, through: :appointments, source: :counselor
 end

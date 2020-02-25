@@ -15,9 +15,29 @@ class UsersController < ApplicationController
         end
     end
     def show
-        @user =  User.find(params[:id])
-        @groups = @user.groups_attending
+        @groups = current_user.groups_attending.order("time ASC")
+        @counselors = current_user.treated_by
     end
+
+    def edit
+        
+    end
+
+    def update
+        @user = User.find(current_user.id)
+        @user.first_name = params[:first_name]
+        @user.last_name = params[:last_name]
+        @user.nickname = params[:nickname]
+        @user.email = params[:email]
+        if @user.valid?
+            @user.save
+            redirect_to "/users/#{@user.id}"
+        else
+            flash[:errors] = @user.errors.full_messages
+            redirect_to "/users/#{@user.id}/edit"
+        end
+    end
+
     
     private
     def user_params

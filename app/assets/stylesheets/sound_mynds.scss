@@ -5,7 +5,69 @@
     margin-left: 30px;
     color: white;
 }
-.group_sessions{
+.group_container{
+    width:1500px;
+    margin:100px auto;
+    padding: 20px;
+    background: black;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 40px;
     color: white;
-    width: 400px;
+    vertical-align: top;
+}
+.group_sessions{
+    width: 500px;
+    margin-left: 90px;
+    margin-right: 150px;
+    display: inline-block;
+}
+.chem_depend{
+    width: 600px;
+    display: inline-block;
+    vertical-align: top;
+}
+.sess{
+    border-bottom: 2px solid white;
+    margin-bottom: 30px;
+}
+.group_container h1{
+    margin-bottom: 30px;
+    text-decoration: underline;
+    text-align: center;
+}
+.group_container p{
+    font-size:16px;
+}
+.group_container .loc{
+    display: inline-block;
+}
+.group_container a{
+    font-size: 28px;
+    color:white;
+    margin-left: 250px;
+}
+.counselor_container{
+    width:650px;
+    margin:100px auto;
+    padding: 20px;
+    background: black;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 40px;
+    color: white;
+}
+.counselors{
+    width: 600px;
+    margin: auto;
+}
+.counselor_container h1{
+    margin-bottom: 5px;
+    text-decoration: underline;
+    text-align: center;
+}
+.counselor_container p{
+    font-size:20px;
+}
+.counselor_container h3{
+    text-align: center;
+    margin-bottom: 25px;
 }

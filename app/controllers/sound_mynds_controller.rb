@@ -1,6 +1,8 @@
 class SoundMyndsController < ApplicationController
     def index
-        @groups = SupportGroup.all
+        @groups = SupportGroup.where.not(name: ["AA", "NA", "Smart Recovery"]).order("time ASC")
+        @groups1 = SupportGroup.where(name: ["AA", "NA", "Smart Recovery"]).order("time ASC")
+        @counselors = Counselor.all
     end
     def create
         @this_group = SupportGroup.new(group_params)
@@ -16,6 +18,7 @@ class SoundMyndsController < ApplicationController
     def show
         @group = SupportGroup.find_by(id: params[:id])
         @users = @group.users_attending
+
     end
 
     private

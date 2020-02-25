@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="info3">
+        <h1><%= @counselor.first_name%> <%= @counselor.last_name%></h1>
+        <h4>Email: <%= @counselor.email%></h4>
+        <h4>Specialty: <%= @counselor.specialty%></h4>
+        <h4>Bio: <%= @counselor.desc %></h4>
+        <h4>Want to chat more??</h4>
+        <h5>Come by today or send me a request.</h5>
+        <% if current_user.treated_by.include? @counselor %>
+            <p>Request Pending
+            <a href="/appointments/<%= @counselor.id %>" data-method="delete">Cancel</a></p>
+        <% else %>
+            <a href="/appointments/<%= @counselor.id %>" data-method="patch">Appointment Request</a>
+        <% end %>
+    </div>
+</body>
+</html>

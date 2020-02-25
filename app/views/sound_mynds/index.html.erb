@@ -7,19 +7,56 @@
 </head>
 <body>
     <div class="header">
-        <h1>Welcome, <%= current_user.nickname %></h1>
+        <h1>Welcome, <%= current_user.nickname %>!</h1>
         <a href="/users/<%= current_user.id %>"></a>
     </div>
     <div class="group_container">
         <div class="group_sessions">
+            <h1>Group Sessions</h1>
             <% @groups.each do |group| %>
-                <p><%= group.name %></p>
-                <p><%= group.desc %></p>
-                <p><%= group.time.strftime("%l:%M %p") %></p>
-                <p><%= group.location %></p>
+                <div class="sess">
+                    <h3><%= group.name %></h3>
+                    <p><%= group.desc %></p>
+                    <p><%= group.time.strftime("%l:%M %p") %></p>
+                    <p><%= group.location %></p>
+                    <% if current_user.groups_attending.include? group %>
+                        <p>Attending
+                        <a href="attends/<%= group.id %>" data-method="delete">Cancel</a></p>
+                    <% else %>
+                        <a href="attends/<%= group.id %>" data-method="patch">Attend</a>
+                    <% end %>
+                </div>
             <% end %>
         </div>
-    
+        <div class="chem_depend">
+            <h1>Chemical Dependency Sessions</h1>
+            <% @groups1.each do |group| %>
+                <div class="sess">
+                    <h3><%= group.name %></h3>
+                    <p><%= group.desc %></p>
+                    <p><%= group.time.strftime("%l:%M %p") %></p>
+                    <p><%= group.location %></p>
+                    <% if current_user.groups_attending.include? group %>
+                        <p>Attending
+                        <a href="attends/<%= group.id %>" data-method="delete">Cancel</a></p>
+                    <% else %>
+                        <a href="attends/<%= group.id %>" data-method="patch">Attend</a>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="counselor_container">
+        <div class="counselors">
+            <h1>Counselors Onsite</h1>
+            <h3>Open Door Policy. Walk-ins Always Welcome.</h3>
+            <div class="sess">
+                <% @counselors.each do |counselor| %>
+                    <p><a href="/counselors/<%= counselor.id %>"><%= counselor.first_name %></a></p>
+                    <p>Specialty: <%= counselor.specialty %></p>
+                <% end %>
+            </div>
+        </div>
     </div>
 </body>
 </html>

@@ -62,3 +62,76 @@
     color: white;
     font-size: 25px;
 }
+.pro_welcome{
+    height: 200px;
+    width:400px;
+    margin-left: 30px;
+    margin-top: 50px;
+    padding: 20px;
+    color: white;
+}
+.pro_welcome a{
+    font-size: 18px;
+}
+.meetings{
+    height: 500px;
+    width:400px;
+    margin: 50px 125px 90px 375px;
+    padding: 20px;
+    background: black;
+    background-color: rgba(0,0,0,0.6);
+    text-align: center;
+    border-radius: 40px;
+    color: white;
+    display: inline-block;
+    vertical-align: top;
+}
+.meetings h2{
+    margin-bottom: 30px;
+}
+.my_counselor{
+    height: 500px;
+    width:400px;
+    margin: 50px 125px 90px 100px;
+    padding: 20px;
+    background: black;
+    background-color: rgba(0,0,0,0.6);
+    text-align: center;
+    border-radius: 40px;
+    color: white;
+    display: inline-block;
+    vertical-align: top;
+}
+.my_counselor h2{
+    margin-bottom: 30px;
+}
+ul{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    font-size: 18px;
+}
+.info3{
+    height: 400px;
+    width:400px;
+    margin: 125px 750px;
+    padding: 20px;
+    background: black;
+    background-color: rgba(0,0,0,0.6);
+    text-align: center;
+    border-radius: 40px;
+    color: white;
+    display: inline-block;
+    vertical-align: top;
+}
+.info3 h1{
+    margin-bottom: 25px;
+}
+.info3 h4{
+    margin-bottom: 20px;
+}
+.info3 a{
+    font-size:18px;
+    font-weight: bold;
+    color: rgb(255, 133, 2);
+}

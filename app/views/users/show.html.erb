@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Mynd</title>
+</head>
+<body>
+    <div class="pro_welcome">
+        <h1>Welcome, <%= current_user.nickname %>!</h1>
+        <h4><%= current_user.first_name %> <%= current_user.last_name %></h4>
+        <h4><%= current_user.email  %></h4>
+        <a href="/users/<%= current_user.id %>/edit">Edit Info</a>
+    </div>
+    <div class="meetings">
+        <h2>Meetings</h2>
+        <ul>
+            <% @groups.each do |group| %>
+                <div class="sess">
+                    <li><%= group.name %></li>
+                    <li><%= group.location %></li>
+                    <li><%= group.time.strftime("%l:%M %p") %></li>
+                </div>
+            <% end %>
+        </ul>
+    </div>
+    <div class="my_counselor">
+        <h2>Counselors Requested</h2>
+        <ul>
+            <% @counselors.each do |counselor| %>
+                <div class="sess">
+                    <li><%= counselor.first_name %> <%= counselor.last_name %></li>
+                    <li><%= counselor.specialty %></li>
+                </div>
+            <% end %>
+        </ul>
+    </div>
+</body>
+</html>
