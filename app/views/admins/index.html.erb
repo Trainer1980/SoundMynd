@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Mynd</title>
+</head>
+<body>
+    <div class="group">
+        <h3>Add Group</h3>
+        <div class="form-group">
+            <form action="/sound_mynds" method="post">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <p><label for="group[name]">Name: </label>
+                <input type="text" name="group[name]"></p>
+                <p><label for="group[time]">Time: </label>
+                <input type="time" name="group[time]"></p>
+                <p><label for="group[location]">Location: </label>
+                <input type="text" name="group[location]"></p>
+                <p><label for="group[desc]">Description: </label>
+                <textarea name="group[desc]" cols="35" rows="6"></textarea></p>
+                <button type="submit" value="AddGroup">Add Group</button>
+            </form>
+        </div>
+    </div>
+    <div class="counselor">
+        <h3>Add Counselor</h3>
+        <div class="form-group">
+            <form action="/counselors" method="post">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <p><label for="counselor[first_name]">First Name: </label>
+                <input type="text" name="counselor[first_name]"></p>
+                <p><label for="counselor[last_name]">Last Name: </label>
+                <input type="text" name="counselor[last_name]"></p>
+                <p><label for="counselor[email]">Email: </label>
+                <input type="text" name="counselor[email]"></p>
+                <p><label for="counselor[specialty]">Specialty: </label>
+                <input type="text" name="counselor[specialty]"></p>
+                <p><label for="counselor[desc]">Short Bio: </label>
+                <textarea name="counselor[desc]" cols="35" rows="5"></textarea></p>
+                <button type="submit" value="AddCounselor">Add Counselor</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

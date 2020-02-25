@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Mynd</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome, <%= current_user.nickname %></h1>
+        <a href="/users/<%= current_user.id %>"></a>
+    </div>
+    <div class="group_container">
+        <div class="group_sessions">
+            <% @groups.each do |group| %>
+                <p><%= group.name %></p>
+                <p><%= group.desc %></p>
+                <p><%= group.time.strftime("%l:%M %p") %></p>
+                <p><%= group.location %></p>
+            <% end %>
+        </div>
+    
+    </div>
+</body>
+</html>

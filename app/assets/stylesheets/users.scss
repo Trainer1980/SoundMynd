@@ -1,0 +1,64 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.info1{
+    height: 500px;
+    width:400px;
+    margin: 150px 125px 90px 375px;
+    padding: 20px;
+    background: black;
+    background-color: rgba(0,0,0,0.6);
+    text-align: center;
+    border-radius: 40px;
+    color: white;
+    display: inline-block;
+    vertical-align: top;
+}
+.info2{
+    height: 290px;
+    width:340px;
+    margin: 150px 125px 200px 125px;
+    padding: 20px;
+    background: black;
+    background-color: rgba(0,0,0,0.6);
+    text-align: center;
+    border-radius: 40px;
+    color: white;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.reg{
+    color: white;
+}
+.reg h1{
+    margin-bottom: 30px;
+}
+.form-group p{
+    margin-bottom: 25px;
+}
+.form-group input{
+    width: 175px;
+    font-size: 18px;
+    margin-left: 50px;
+    float: right;
+    color: black;
+}
+.form-group button{
+    float: right;
+    margin-top: 20px;
+    color: black;
+}
+.link1{
+    width:175px;
+    margin: 50px auto;
+    padding: 20px;
+    background: black;
+    background-color: rgba(0,0,0,0.6);
+    text-align: center;
+    border-radius: 40px;
+}
+.link1 a{
+    color: white;
+    font-size: 25px;
+}

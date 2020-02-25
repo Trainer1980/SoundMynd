@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sound Mynd</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="errors">
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="success">
+    <% if flash[:success] %>
+      <%= flash[:success] %>
+    <% end %>
+  </div>
+  <div>
+    <% if current_user && current_user.admin? %>
+      <a href="/admins" class="a">Admin Page</a>
+    <% end %>
+    <% if current_user %>
+      <a href="/sound_mynds" class="b">Sound Mynd Dashboard</a>
+    <% end %>
+    <% if current_user %>
+      <div class="log">
+        <form action="/sessions/<%=current_user.id%>" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name="_method" value="delete">
+          <button class="logout" type="submit" value="Log Out">Logout</button>
+        </form>
+      </div>
+    <% end %> 
+    <%= yield %>
+  </div>
+</body>
+</html>
