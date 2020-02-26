@@ -1,3 +1,17 @@
 // Place all the styles related to the Counselors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.counselor1{
+    height: 525px;
+    width:375px;
+    margin: 150px 760px;
+    padding: 20px;
+    background: black;
+    background-color: rgba(0,0,0,0.6);
+    text-align: center;
+    border-radius: 40px;
+    color: white;
+}
+.counselor1 h3{
+    margin-bottom: 30px;
+}

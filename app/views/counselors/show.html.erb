@@ -20,5 +20,15 @@
             <a href="/appointments/<%= @counselor.id %>" data-method="patch">Appointment Request</a>
         <% end %>
     </div>
+    <% if current_user && current_user.admin? %>
+        <div class="info3">
+            <h5>People who have requested appointments:</h5>
+            <% @users.each do |user| %>
+                <p><%= user.first_name %> <%= user.last_name %></p>
+            <% end %>
+            <br>
+            <br>
+        </div>
+    <% end %>
 </body>
 </html>

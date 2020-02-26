@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :require_login, except: [:index, :create]
+    before_action :valid_user, except: [:index, :create]
     def index
         render "index.html.erb"
     end
@@ -37,10 +38,26 @@ class UsersController < ApplicationController
             redirect_to "/users/#{@user.id}/edit"
         end
     end
-
+    def destroy
+        @user = User.find(params[:id])
+        if current_user.admin?
+            @user.delete
+            redirect_to "/admins"
+        else
+            session[:user_id] = nil
+            session.clear
+            @user.delete
+            redirect_to "/"
+        end
+    end
     
     private
     def user_params
         params.require(:user).permit(:first_name, :last_name, :nickname, :email, :password, :password_confirmation)
     end
+    def valid_user
+		if current_user != User.find(params[:id])
+			redirect_to "/users/#{session[:user_id]}"
+		end
+	end
 end

@@ -25,7 +25,9 @@
     <% elsif current_user %>
       <a href="/users/<%= current_user.id %>" class="a">My Profile</a>
     <% end %>
-    <% if current_user %>
+    <% if current_user && current_user.admin? %>
+      <a href="/admins/new" class="b">Add Group/Counselor</a>
+    <% elsif current_user %>
       <a href="/sound_mynds" class="b">Sound Mynd Dashboard</a>
     <% end %>
     <% if current_user %>

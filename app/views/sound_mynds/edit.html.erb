@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Mynd</title>
+</head>
+<body>
+    <div class="info4">
+        <div class="reg">
+            <h1>Update Group Profile</h1>
+            <div class="form-group">
+                <form action="/sound_mynds/<%= @group.id%>" method="post">
+                    <input type="hidden" name="_method" value="patch">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                    <p><label for="group[name]">Name: </label>
+                    <input type="text" name="name" value="<%= @group.name %>"></p>
+                    <p><label for="group[time]">Time: </label>
+                    <input type="time" name="time" value="#{@group.time}"></p>
+                    <p><label for="group[location]">Location: </label>
+                    <input type="text" name="location" value="<%= @group.location %>"></p>
+                    <p><label for="group[desc]">Description: </label>
+                    <textarea name="desc"  cols="35" rows="6" ><%= @group.desc %></textarea></p>
+                    <button class="btn" type="submit" value="EditGroup">Edit Group</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

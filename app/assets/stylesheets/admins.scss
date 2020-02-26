@@ -4,7 +4,7 @@
 .group{
     height: 500px;
     width:375px;
-    margin: 150px 125px 90px 225px;
+    margin: 150px 125px 90px 475px;
     padding: 20px;
     background: black;
     background-color: rgba(0,0,0,0.6);
@@ -37,4 +37,7 @@
 }
 .counselor h3{
     margin-bottom: 30px;
+}
+.group_container .c{
+    margin-left:0px;
 }

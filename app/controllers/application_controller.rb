@@ -7,6 +7,21 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def is_admin?
+    if current_user && current_user.admin?
+    redirect_to "/admins"
+    end
+  end
+  helper_method :is_admin?
+
+  def not_admin?
+    if current_user.admin == false
+      redirect_to "/sound_mynds"
+    end
+  end
+  helper_method :not_admin?
+
+
   private
   def require_login
     if session[:user_id] == nil

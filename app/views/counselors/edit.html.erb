@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="counselor1">
+        <h3>Edit Counselor</h3>
+        <div class="form-group">
+            <form action="/counselors/<%= @counselor.id %>" method="post">
+                <input type="hidden" name="_method" value="patch">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <p><label for="counselor[first_name]">First Name: </label>
+                <input type="text" name="first_name" value="<%= @counselor.first_name %>"></p>
+                <p><label for="counselor[last_name]">Last Name: </label>
+                <input type="text" name="last_name" value="<%= @counselor.last_name %>"></p>
+                <p><label for="counselor[email]">Email: </label>
+                <input type="text" name="email" value="<%= @counselor.email %>"></p>
+                <p><label for="counselor[specialty]">Specialty: </label>
+                <input type="text" name="specialty" value="<%= @counselor.specialty %>"></p>
+                <p><label for="counselor[desc]">Short Bio: </label>
+                <textarea name="desc" cols="35" rows="5"><%= @counselor.desc %></textarea></p>
+                <button type="submit" value="EditCounselor">Edit Counselor</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

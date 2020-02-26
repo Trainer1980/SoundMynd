@@ -10,7 +10,8 @@
         <h1>Welcome, <%= current_user.nickname %>!</h1>
         <h4><%= current_user.first_name %> <%= current_user.last_name %></h4>
         <h4><%= current_user.email  %></h4>
-        <a href="/users/<%= current_user.id %>/edit">Edit Info</a>
+        <p><a href="/users/<%= current_user.id %>/edit">Edit Profile</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="/users/<%= current_user.id %>" data-method="delete">Delete Profile</a></p>
     </div>
     <div class="meetings">
         <h2>Meetings</h2>

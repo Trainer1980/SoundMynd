@@ -21,11 +21,12 @@
                     <p><%= group.location %></p>
                     <% if current_user.groups_attending.include? group %>
                         <p>Attending
-                        <a href="attends/<%= group.id %>" data-method="delete">Cancel</a></p>
+                        <a href="attends/<%= group.id %>" data-method="delete" >Cancel</a></p>
                     <% else %>
                         <a href="attends/<%= group.id %>" data-method="patch">Attend</a>
                     <% end %>
                 </div>
+                <br>
             <% end %>
         </div>
         <div class="chem_depend">
@@ -43,6 +44,7 @@
                         <a href="attends/<%= group.id %>" data-method="patch">Attend</a>
                     <% end %>
                 </div>
+                <br>
             <% end %>
         </div>
     </div>
@@ -50,12 +52,13 @@
         <div class="counselors">
             <h1>Counselors Onsite</h1>
             <h3>Open Door Policy. Walk-ins Always Welcome.</h3>
-            <div class="sess">
-                <% @counselors.each do |counselor| %>
+            <% @counselors.each do |counselor| %>
+                <div class="sess">
                     <p><a href="/counselors/<%= counselor.id %>"><%= counselor.first_name %></a></p>
                     <p>Specialty: <%= counselor.specialty %></p>
-                <% end %>
-            </div>
+                </div>
+                <br>
+            <% end %>
         </div>
     </div>
 </body>
