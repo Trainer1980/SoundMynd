@@ -26,6 +26,7 @@ class CounselorsController < ApplicationController
         @counselor = Counselor.find(params[:id])
         @counselor.first_name = params[:first_name]
         @counselor.last_name = params[:last_name]
+        @counselor.email = params[:email]
         @counselor.specialty = params[:specialty]
         @counselor.desc = params[:desc]
         if @counselor.valid?
