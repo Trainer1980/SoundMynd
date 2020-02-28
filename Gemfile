@@ -30,7 +30,6 @@ gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'rspec'
-gem 'rails-footnotes', '>= 4.0.0', '<5'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
